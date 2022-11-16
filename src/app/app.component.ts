@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'crud-angular';
+
+  dataBooks = [];
+
+  onUpdateData(data: any){
+    console.log("no father", data)
+    this.dataBooks = data
+  }
+
 }

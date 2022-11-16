@@ -1,0 +1,21 @@
+<form class="w-full flex justify-between items-center bg-[#ffdf61] border-black border-2 border-solid">
+    <input 
+        type="text" 
+        name="bookSearch" 
+        required
+        placeholder="Type the book you are looking for"
+        [(ngModel)]="bookSearch"
+        class="w-10/12 h-full p-6 lg:w-11/12 lg:p-4 outline-none" 
+    />
+
+    <button class="lg:w-1/12 w-2/12 h-full flex items-center justify-center" (click)="searchBook()">
+        <span class="material-symbols-outlined">
+            search
+        </span>
+    </button>
+</form>
+
+<p *ngIf="showErrorMessage" class="font-semibold flex my-2">
+    <span class="material-symbols-outlined text-red-400">info</span>
+    You need to fill this input
+</p>
