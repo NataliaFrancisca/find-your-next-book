@@ -1,3 +1,20 @@
-<img src={{dataBook.volumeInfo.imageLinks?.thumbnail}} class="object-cover h-96 w-96"/>
+<img *ngIf="!dataBook.volumeInfo.imageLinks?.thumbnail" src="assets/images/image-not-found.png" class="object-contain h-60 w-40"/>
+<img *ngIf="dataBook.volumeInfo.imageLinks?.thumbnail" src={{dataBook.volumeInfo.imageLinks?.thumbnail}} class="object-cover h-60 w-40"/>
 
-<h2>{{dataBook.volumeInfo.title}}</h2>
+<section class="flex flex-col w-10/12 p-4">
+    <h2 class="text-2xl font-semibold">{{dataBook.volumeInfo.title}}</h2>
+
+    <h3 *ngIf="dataBook.volumeInfo?.authors; else noHasAuthor">{{dataBook.volumeInfo.authors[0] | titlecase}}</h3>
+    <ng-template #noHasAuthor>
+        <h3>Author not found</h3>
+    </ng-template>
+
+    <p *ngIf="!shouldOpenReadMore">{{showOnlyShortDescription}}</p>
+    <p *ngIf="shouldOpenReadMore">{{dataBook.volumeInfo?.description}}</p>
+    <span *ngIf="dataBook.volumeInfo.description" (click)="toogleReadMore()" class="cursor-pointer text-[#ff925c] font-semibold">...Read More</span>
+
+    <button class="absolute top-4 right-4" (click)="toogleFavoriteButton()">
+        <span *ngIf="!favoriteBook" class="material-symbols-outlined transition-all ease-in-out duration-200">favorite</span>
+        <span *ngIf="favoriteBook" class="material-symbols-outlined fill text-red-500 transition-all ease-in-out duration-200">favorite</span>
+    </button>
+</section>
