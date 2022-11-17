@@ -7,27 +7,16 @@ const teste = require("../../../assets/volumes.json");
   styleUrls: ['./view-books.component.css']
 })
 export class ViewBooksComponent implements OnInit {
-  // @Input() dataBooks: Array<any> = [];
-  dataBooks = [...teste.items];
+  @Input() dataBooks: Array<any> = [];
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log(teste.items)
+    console.log('no outro filho', this.dataBooks)
   }
 
-
-
-  // @Input() dataBooks: Array<any> = [];
-
-  // constructor() { }
-
-  // ngOnInit(): void {
-  //   console.log('no outro filho', this.dataBooks)
-  // }
-
-  // ngOnChanges(changes: SimpleChanges){
-  //   console.log(changes['dataBooks'].currentValue);
-  // }
+  ngOnChanges(changes: SimpleChanges){
+    console.log(changes['dataBooks'].currentValue);
+  }
 
 }
