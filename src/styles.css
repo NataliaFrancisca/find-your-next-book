@@ -17,3 +17,12 @@
     border: 0;
     box-sizing: border-box;
 }
+
+
+.material-symbols-outlined.fill {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+  }
