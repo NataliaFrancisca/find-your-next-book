@@ -3,3 +3,7 @@
 
 <app-form class="lg:w-3/5 w-11/12 flex flex-col m-4" (updateData)="onUpdateData($event)"></app-form>
 <app-view-books [dataBooks]="dataBooks" class="w-11/12 grid gap-4 grid-cols-1 my-8"></app-view-books>
+
+<button class="absolute top-4 right-4" (click)="showFavoriteBooks()">
+    <span class="material-symbols-outlined fill text-red-500 transition-all ease-in-out duration-200">favorite</span>
+</button>
