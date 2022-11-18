@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-
+import { CrudService } from 'src/app/service/crud.service';
 
 @Component({
   selector: 'app-book',
@@ -14,7 +14,7 @@ export class BookComponent implements OnInit {
   shouldOpenReadMore: boolean = false;
   favoriteBook = false;
 
-  constructor() { }
+  constructor(private crudService: CrudService) { }
 
   ngOnInit(): void {
     if(this.dataBook.volumeInfo.description && this.dataBook.volumeInfo?.description.split(" ").length > 20){
@@ -22,6 +22,8 @@ export class BookComponent implements OnInit {
     }else{
       this.toogleReadMore();
     }
+
+    this.isFavoriteBook();
   }
 
   toogleReadMore(){
@@ -30,6 +32,12 @@ export class BookComponent implements OnInit {
 
   toogleFavoriteButton(){
     this.favoriteBook = !this.favoriteBook;
+    this.favoriteBook ? this.crudService.saveBook(this.dataBook) : this.crudService.deleteBook(this.dataBook);
   }
 
+  isFavoriteBook(){
+    const booksFavorite = this.crudService.getBooks();
+    const isFavorite = booksFavorite.some((booksFavorite: any) => booksFavorite.id === this.dataBook.id)
+    this.favoriteBook = isFavorite;
+  }
 }
