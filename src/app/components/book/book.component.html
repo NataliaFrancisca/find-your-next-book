@@ -10,7 +10,7 @@
     </ng-template>
 
     <p *ngIf="!shouldOpenReadMore">{{showOnlyShortDescription}}</p>
-    <p *ngIf="shouldOpenReadMore">{{dataBook.volumeInfo?.description}}</p>
+    <p *ngIf="shouldOpenReadMore" class="break-all">{{dataBook.volumeInfo?.description}}</p>
     <span *ngIf="dataBook.volumeInfo.description" (click)="toogleReadMore()" class="cursor-pointer text-[#ff925c] font-semibold">...Read More</span>
 
     <button class="absolute top-4 right-4" (click)="toogleFavoriteButton()">
