@@ -18,9 +18,12 @@ export class FormComponent implements OnInit {
   }
 
   async searchBook(){
-    this.bookSearch == undefined ? this.showErrorMessage = true : this.showErrorMessage = false;
-    const result = await this.fetchService.fetchBook(this.bookSearch);
-    console.log("no form", result)
-    this.updateData.emit(result);
+    if(this.bookSearch == undefined ){
+      this.showErrorMessage = true;
+    }else{
+      this.showErrorMessage = false;
+      const result = await this.fetchService.fetchBook(this.bookSearch);
+      this.updateData.emit(result);
+    }
   }
 }
