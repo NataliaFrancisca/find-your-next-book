@@ -1,7 +1,7 @@
-<img *ngIf="!dataBook.volumeInfo.imageLinks?.thumbnail" src="assets/images/image-not-found.png" class="object-contain h-60 w-40"/>
-<img *ngIf="dataBook.volumeInfo.imageLinks?.thumbnail" src={{dataBook.volumeInfo.imageLinks?.thumbnail}} class="object-cover h-60 w-40"/>
+<img *ngIf="!dataBook.volumeInfo.imageLinks?.thumbnail" src="assets/images/image-not-found.png" class="object-contain h-60 w-40 lg:m-0 m-4"/>
+<img *ngIf="dataBook.volumeInfo.imageLinks?.thumbnail" src={{dataBook.volumeInfo.imageLinks?.thumbnail}} class="object-cover h-60 w-40 lg:m-0 m-4"/>
 
-<section class="flex flex-col w-10/12 p-4">
+<section class="flex flex-col w-12/12 lg:w-10/12 p-4">
     <h2 class="text-2xl font-semibold">{{dataBook.volumeInfo.title}}</h2>
 
     <h3 *ngIf="dataBook.volumeInfo?.authors; else noHasAuthor">{{dataBook.volumeInfo.authors[0] | titlecase}}</h3>
@@ -10,7 +10,7 @@
     </ng-template>
 
     <p *ngIf="!shouldOpenReadMore">{{showOnlyShortDescription}}</p>
-    <p *ngIf="shouldOpenReadMore" class="break-all">{{dataBook.volumeInfo?.description}}</p>
+    <p *ngIf="shouldOpenReadMore" class="break-words">{{dataBook.volumeInfo?.description}}</p>
     <span *ngIf="dataBook.volumeInfo.description" (click)="toogleReadMore()" class="cursor-pointer text-[#ff925c] font-semibold">...Read More</span>
 
     <button class="absolute top-4 right-4" (click)="toogleFavoriteButton()">
