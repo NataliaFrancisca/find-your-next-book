@@ -7,6 +7,7 @@ import { Component, OnInit, Input} from '@angular/core';
 })
 export class ViewBooksComponent implements OnInit {
   @Input() dataBooks: Array<any> = [];
+  @Input() titleView!:string;
 
   constructor() { }
 
