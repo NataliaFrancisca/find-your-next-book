@@ -7,10 +7,13 @@ export class CrudService {
 
   constructor() {
     const storage = localStorage.getItem("books") ||  "";
-
     if(storage == ""){
       localStorage.setItem("books", JSON.stringify([]));
     }
+  }
+
+  checkAlreadyAddBook(book: any, books: Array<any>){
+    return books.some(bookStorage => bookStorage.id === book.id)
   }
 
   saveBook(book: Object){
@@ -32,10 +35,4 @@ export class CrudService {
     const updateStorage = JSON.parse(storage).filter((bookStorage: any) => bookStorage.id !== book.id)
     localStorage.setItem("books", JSON.stringify(updateStorage))
   }
-
-  checkAlreadyAddBook(book: any, books: Array<any>){
-    return books.some(bookStorage => bookStorage.id === book.id)
-  }
-
-
 }
