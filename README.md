@@ -1,27 +1,41 @@
-# CrudAngular
+# 📚Find your next book
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.2.
+Esse projeto foi contruído para praticar os conhecimentos em Angular.
 
-## Development server
+⭐ Esse projeto foi feito baseado no [Book Finder](https://github.com/wasimreja/book-finder) do [Wasim Reja](https://github.com/wasimreja).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Stack utilizada
 
-## Code scaffolding
+- Angular,
+- TailwindCSS
+- Google Books API's
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Funcionalidades
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Pesquisar por livros e autores
+- Salvar livros
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Aprendizados
 
-## Running end-to-end tests
+- Como trabalhar com APIs no Angular,
+- Criar services,
+- Compartilhar dados entre componentes,
+- Utilização do Tailwind.
+## Melhorias
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Preciso melhorar a utilização da tipagem do TS, principalmente no retorno do resultado da API.
+- Melhorar a padronização do código
+## Screenshots
 
-## Further help
+![App Screenshot](https://firebasestorage.googleapis.com/v0/b/github-images-6c299.appspot.com/o/find-your-next-book.png?alt=media&token=397bdaa7-f46a-4f6e-be92-6d63ab01ba17)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Referência
+ - [Icons](https://fonts.google.com/icons)
+ - [Imagem](https://designstripe.com/)
+## Demonstração
+
+🔗[Find your next book](https://find-your-next-book.vercel.app/)
+
