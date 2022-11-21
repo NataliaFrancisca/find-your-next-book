@@ -18,7 +18,7 @@ export class FormComponent implements OnInit {
   }
 
   async searchBook(){
-    if(this.bookSearch == undefined ){
+    if(this.bookSearch == undefined || this.bookSearch == ""){
       this.showErrorMessage = true;
     }else{
       this.showErrorMessage = false;
