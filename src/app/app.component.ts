@@ -14,7 +14,6 @@ export class AppComponent {
   constructor(private crudService: CrudService){}
 
   onUpdateData(data: any){
-    console.log("no father", data)
     this.dataBooks = data
   }
 
@@ -22,10 +21,10 @@ export class AppComponent {
     if(!this.shouldShowFavoriteBooks){
       const books = this.crudService.getBooks();
       this.dataBooks = books;
-      this.shouldShowFavoriteBooks = !this.shouldShowFavoriteBooks;
     }else{
       this.dataBooks = [];
-      this.shouldShowFavoriteBooks = !this.shouldShowFavoriteBooks;
     }
+
+    this.shouldShowFavoriteBooks = !this.shouldShowFavoriteBooks;
   }
 }
