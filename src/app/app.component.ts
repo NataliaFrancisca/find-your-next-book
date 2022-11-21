@@ -16,17 +16,17 @@ export class AppComponent {
 
   onUpdateData(data: any){
     this.dataBooks = data;
-    this.titleViewPage = "Resultados:"
+    this.titleViewPage = "Results:"
   }
 
   showSavedBooks(){
     if(!this.shouldShowSavedBooks){
       const books = this.crudService.getBooks();
       this.dataBooks = books;
-      this.titleViewPage = "Livros salvos:"
+      this.titleViewPage = "My library:"
     }else{
       this.dataBooks = [];
-      this.titleViewPage = "Resultados:"
+      this.titleViewPage = "Results:"
     }
 
     this.shouldShowSavedBooks = !this.shouldShowSavedBooks;
