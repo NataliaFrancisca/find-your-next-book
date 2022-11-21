@@ -4,7 +4,7 @@
 <app-form class="lg:w-3/5 w-11/12 flex flex-col m-4" (updateData)="onUpdateData($event)"></app-form>
 <app-view-books [dataBooks]="dataBooks" [titleView]="titleViewPage" class="w-11/12 grid gap-4 grid-cols-1 my-8"></app-view-books>
 
-<button class="absolute top-4 right-4" (click)="showFavoriteBooks()">
-    <span *ngIf="!shouldShowFavoriteBooks" class="material-symbols-outlined text-[#ff925c] ">bookmarks</span>
-    <span *ngIf="shouldShowFavoriteBooks" class="material-symbols-outlined fill text-[#ff925c]">bookmarks</span>
+<button class="absolute top-4 right-4" (click)="showSavedBooks()">
+    <span *ngIf="!shouldShowSavedBooks" class="material-symbols-outlined text-[#ff925c] ">bookmarks</span>
+    <span *ngIf="shouldShowSavedBooks" class="material-symbols-outlined fill text-[#ff925c]">bookmarks</span>
 </button>

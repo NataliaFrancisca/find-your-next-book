@@ -9,7 +9,7 @@ import { CrudService } from './service/crud.service';
 export class AppComponent {
   title = 'crud-angular';
   titleViewPage = "Resultados";
-  shouldShowFavoriteBooks: boolean = false;
+  shouldShowSavedBooks: boolean = false;
   dataBooks = [];
 
   constructor(private crudService: CrudService){}
@@ -19,8 +19,8 @@ export class AppComponent {
     this.titleViewPage = "Resultados:"
   }
 
-  showFavoriteBooks(){
-    if(!this.shouldShowFavoriteBooks){
+  showSavedBooks(){
+    if(!this.shouldShowSavedBooks){
       const books = this.crudService.getBooks();
       this.dataBooks = books;
       this.titleViewPage = "Livros salvos:"
@@ -29,6 +29,6 @@ export class AppComponent {
       this.titleViewPage = "Resultados:"
     }
 
-    this.shouldShowFavoriteBooks = !this.shouldShowFavoriteBooks;
+    this.shouldShowSavedBooks = !this.shouldShowSavedBooks;
   }
 }
