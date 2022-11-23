@@ -2,7 +2,7 @@
 
 Esse projeto foi construído para praticar os conhecimentos em Angular.
 
-⭐ Esse projeto foi feito baseado no [Book Finder](https://github.com/wasimreja/book-finder) do [Wasim Reja](https://github.com/wasimreja).
+⭐ O projeto foi baseado no [Book Finder](https://github.com/wasimreja/book-finder) do [Wasim Reja](https://github.com/wasimreja).
 
 ## Stack utilizada
 
