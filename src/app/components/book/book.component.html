@@ -1,19 +1,21 @@
-<img *ngIf="!dataBook.volumeInfo.imageLinks?.thumbnail" src="assets/images/image-not-found.png" class="object-contain h-60 w-40 lg:m-0 m-4"/>
-<img *ngIf="dataBook.volumeInfo.imageLinks?.thumbnail" src={{dataBook.volumeInfo.imageLinks?.thumbnail}} class="object-cover h-60 w-40 lg:m-0 m-4"/>
+<img src="{{bookImage}}" class="object-cover h-60 w-40 lg:m-0 m-4" />
 
 <section class="flex flex-col w-12/12 lg:w-10/12 p-4">
-    <h2 class="text-2xl font-semibold">{{dataBook.volumeInfo.title}}</h2>
+    <h2 class="text-2xl font-semibold">{{volumeBookData.title}}</h2>
 
-    <h3 *ngIf="dataBook.volumeInfo?.authors; else noHasAuthor">{{dataBook.volumeInfo.authors[0] | titlecase}}</h3>
-    <ng-template #noHasAuthor>
-        <h3>Author not found</h3>
+    <h3 *ngIf="volumeBookData.authors; else authorNotFound">{{volumeBookData.authors[0] | titlecase}}</h3>
+    <ng-template #authorNotFound>
+        <h3>Author not Found</h3>
     </ng-template>
 
-    <p *ngIf="!shouldOpenReadMore">{{showOnlyShortDescription}}</p>
-    <p *ngIf="shouldOpenReadMore" class="break-words">{{dataBook.volumeInfo?.description}}</p>
-    <span *ngIf="dataBook.volumeInfo.description" (click)="toogleReadMore()" class="cursor-pointer text-[#ff925c] font-semibold">...Read More</span>
+    <p *ngIf="!stateToggleReadMore else longDescription">{{ shortBookDescription }}</p>
+    <ng-template #longDescription>
+        <p>{{volumeBookData.description}}</p>
+    </ng-template>
 
-    <button class="absolute top-4 right-4" (click)="toogleFavoriteButton()">
+    <span *ngIf="volumeBookData.description" (click)="buttonToogleReadMore()" class="cursor-pointer text-[#ff925c] font-semibold">...Read More</span>
+
+    <button class="absolute top-4 right-4" (click)="buttonToogleFavorite()">
         <span *ngIf="!favoriteBook" class="material-symbols-outlined">bookmark</span>
         <span *ngIf="favoriteBook" class="material-symbols-outlined fill ">bookmark</span>
     </button>
