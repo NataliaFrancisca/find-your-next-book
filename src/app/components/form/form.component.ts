@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FetchService } from 'src/app/service/fetch.service';
+import { BookResponse } from 'src/types/types';
 
 @Component({
   selector: 'app-form',
@@ -7,7 +8,7 @@ import { FetchService } from 'src/app/service/fetch.service';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-  @Output() updateData: EventEmitter<any> = new EventEmitter;
+  @Output() updateData: EventEmitter<BookResponse> = new EventEmitter;
   @Input() bookSearch!: string;
 
   showErrorMessage: boolean = false;
