@@ -9,26 +9,30 @@ import { CrudService } from './service/crud.service';
 export class AppComponent {
   title = 'crud-angular';
   titleViewPage = "Resultados";
+
+  stateToggleViewBooks = false;
+
   shouldShowSavedBooks: boolean = false;
-  dataBooks = [];
+  bookData = [];
 
   constructor(private crudService: CrudService){}
 
   onUpdateData(data: any){
-    this.dataBooks = data;
+    this.bookData = data;
     this.titleViewPage = "Results:"
   }
 
-  showSavedBooks(){
-    if(!this.shouldShowSavedBooks){
+  buttonToogleViewBooks(){
+    this.stateToggleViewBooks = !this.stateToggleViewBooks;
+
+    if(this.stateToggleViewBooks){
       const books = this.crudService.getBooks();
-      this.dataBooks = books;
+      this.bookData = books;
       this.titleViewPage = "My library:"
     }else{
-      this.dataBooks = [];
+      this.bookData = [];
       this.titleViewPage = "Results:"
     }
 
-    this.shouldShowSavedBooks = !this.shouldShowSavedBooks;
   }
 }
