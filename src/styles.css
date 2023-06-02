@@ -7,7 +7,8 @@
 
 @layer base{
     html{
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Roboto Flex', sans-serif;
+        background-color: #E1EDFF;
     }
 }
 
