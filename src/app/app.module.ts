@@ -9,6 +9,7 @@ import { ViewBooksComponent } from './components/view-books/view-books.component
 import { BookComponent } from './components/book/book.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LogoComponent } from './components/logo/logo.component';
+import { FloatMenuComponent } from './components/float-menu/float-menu.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { LogoComponent } from './components/logo/logo.component';
     ViewBooksComponent,
     BookComponent,
     HomePageComponent,
-    LogoComponent
+    LogoComponent,
+    FloatMenuComponent
   ],
   imports: [
     BrowserModule,
