@@ -1,24 +1,30 @@
-<input type="checkbox" id="checkbox-menu" class="peer hidden"/>
-<label for="checkbox-menu" class="absolute z-10 flex flex-col top-6 right-4 rounded-full cursor-pointer">
-    <img src="assets/icon/user.svg" class="p-2 "/>
-</label>
+<menu class="top-12 right-10 absolute bg-primary z-10 flex rounded shadow-default">
+    <input type="checkbox" id="checkbox-menu" class="peer hidden"/>
+    <label for="checkbox-menu" class="flex flex-col rounded-full cursor-pointer peer-checked:hidden">
+        <img src="assets/icon/menu.svg" class="p-2"/>
+    </label>
 
-<nav class="bg-[#DBE9F9] absolute flex-col justify-center top-4 right-4 md:bg-light-green p-3.5 rounded shadow-default hidden peer-checked:flex">
-    <ul class="w-32 mt-10">
-        <li class="flex font-medium text-base p-2 rounded mb-2 hover:bg-dark-green cursor-pointer">
-            <img src="assets/icon/favorite.svg" class="mr-2 w-5 h-5" />
-            Favorite
-        </li>
+    <label for="checkbox-menu" class="absolute top-5 right-5 hidden flex-col rounded-full cursor-pointer peer-checked:flex">
+        <img src="assets/icon/close.svg" class="p-2"/>
+    </label>
 
-        <li class="flex font-medium text-base p-2 rounded mb-2 hover:bg-dark-green cursor-pointer">
-            <img src="assets/icon/saved.svg" class="mr-2 w-5 h-5" />
-            Saved
-        </li>
-
-        <li class="flex font-medium text-base p-2 rounded hover:bg-dark-green cursor-pointer">
-            <img src="assets/icon/finished.svg" class="mr-2 w-5 h-5" />
-            Finished
-        </li>
-    </ul>
-</nav>    
-
+    <nav class="bg-primary flex-col justify-center mt-10 pb-4 md:bg-light-green p-3.5 rounded hidden peer-checked:flex">
+        <ul class="w-36">
+            <li class="flex font-medium text-base p-2 rounded mb-2 hover:bg-background cursor-pointer">
+                <img src="assets/icon/favorite.svg" class="mr-2 w-5 h-5" />
+                <a [routerLink]="['/favorites']" routerLinkActive="router-link-active">Favorite</a>
+            </li>
+    
+            <li class="flex font-medium text-base p-2 rounded mb-2 hover:bg-background cursor-pointer">
+                <img src="assets/icon/saved.svg" class="mr-2 w-5 h-5" />
+                <a [routerLink]="['/saved']" routerLinkActive="router-link-active">Saved</a>
+            </li>
+    
+            <li class="flex font-medium text-base p-2 rounded hover:bg-background cursor-pointer">
+                <img src="assets/icon/finished.svg" class="mr-2 w-5 h-5" />
+                <a [routerLink]="['/finished']" routerLinkActive="router-link-active">Finished</a>
+                
+            </li>
+        </ul>
+    </nav>   
+</menu>
