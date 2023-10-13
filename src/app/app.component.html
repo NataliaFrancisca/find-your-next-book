@@ -1,14 +1,1 @@
-<!-- <img src="assets/images/people-reading.png" class="lg:w-[32rem] lg:h-[24rem] w-11/12 h-11/12"/>
-<h1 class="text-5xl text-center"> <b>Find</b> your next book</h1>
-
-<app-form class="lg:w-3/5 w-11/12 flex flex-col m-4" (updateData)="onUpdateData($event)"></app-form>
-<app-view-books [bookResponseData]="bookData" [titleView]="titleViewPage" class="w-11/12 grid gap-4 grid-cols-1 my-8"></app-view-books>
-
-<button class="absolute top-4 right-4" (click)="buttonToogleViewBooks()">
-    <span *ngIf="!stateToggleViewBooks; else showSavedBooks" class="material-symbols-outlined text-[#ff925c] ">bookmarks</span>
-    <ng-template #showSavedBooks>
-        <span class="material-symbols-outlined fill text-[#ff925c]">bookmarks</span>
-    </ng-template>
-</button> -->
-
-<app-home-page class="w-11/12 lg:w-8/12 xl:w-6/12"></app-home-page>
+<router-outlet class="w-11/12 lg:w-8/12 xl:w-6/12"></router-outlet>
