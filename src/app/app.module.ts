@@ -10,6 +10,10 @@ import { BookComponent } from './components/book/book.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { FloatMenuComponent } from './components/float-menu/float-menu.component';
+import { SavedBooksPageComponent } from './pages/saved-books-page/saved-books-page.component';
+import { FinishedBooksPageComponent } from './pages/finished-books-page/finished-books-page.component';
+import { FavoritesBooksPageComponent } from './pages/favorites-books-page/favorites-books-page.component';
+import { FloatHomeComponent } from './components/float-home/float-home.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,11 @@ import { FloatMenuComponent } from './components/float-menu/float-menu.component
     BookComponent,
     HomePageComponent,
     LogoComponent,
-    FloatMenuComponent
+    FloatMenuComponent,
+    SavedBooksPageComponent,
+    FinishedBooksPageComponent,
+    FavoritesBooksPageComponent,
+    FloatHomeComponent
   ],
   imports: [
     BrowserModule,
