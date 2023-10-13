@@ -1,17 +1,17 @@
-<app-logo class="flex flex-col justify-center items-center"></app-logo>
+<main class="w-full p-4">
+    <app-logo class="flex flex-col justify-center items-center"></app-logo>
 
-<!-- INPUT WITH BUTTON -->
-<div class="bg-white rounded-md flex mt-5 w-full">
-    <input 
-        type="text" 
-        class="w-11/12 px-6 py-5 mr-2 rounded-md placeholder-slate-400 focus:outline-none text-ellipsis" 
-        placeholder="Type the book that you are looking for" 
-    />
+    <div class="bg-white rounded-sm flex mt-5 w-full border-solid border-3 border-base-black">
+        <input 
+            type="text" 
+            class="text-lg w-11/12 px-7 py-4 mr-2 placeholder-slate-400 focus:outline-none text-ellipsis" 
+            placeholder="Type the book that you are looking for" 
+        />
 
-    <button class="flex justify-center items-center  px-6 py-5">
-        <img src="assets/icon/search-input.svg" />
-    </button>
-</div>
+        <button class="flex justify-center items-center px-6 py-4 bg-primary">
+            <img src="assets/icon/search.svg" />
+        </button>
+    </div>
 
-<app-float-menu>
-</app-float-menu>
+    <app-float-menu></app-float-menu>
+</main>
