@@ -1,14 +1,10 @@
-<menu class="top-12 right-10 absolute bg-primary z-10 flex rounded shadow-default">
-    <input type="checkbox" id="checkbox-menu" class="peer hidden"/>
-    <label for="checkbox-menu" class="flex flex-col rounded-full cursor-pointer peer-checked:hidden">
-        <img src="assets/icon/menu.svg" class="p-2"/>
-    </label>
+<menu class="top-12 right-10 absolute bg-primary z-10 flex flex-col justify-end items-end shadow-default  rounded" >
+    <button (click)="onToggleMenu()" class="cursor-pointer flex justify-end p-2 w-fit" [@openClose]="toggleMenu ? 'open' : 'close'"> 
+        <img *ngIf="toggleMenu == false" src="assets/icon/menu.svg" class="p-2" />
+        <img *ngIf="toggleMenu" src="assets/icon/close.svg" class="p-2" />
+    </button>
 
-    <label for="checkbox-menu" class="absolute top-5 right-5 hidden flex-col rounded-full cursor-pointer peer-checked:flex">
-        <img src="assets/icon/close.svg" class="p-2"/>
-    </label>
-
-    <nav class="bg-primary flex-col justify-center mt-10 pb-4 md:bg-light-green p-3.5 rounded hidden peer-checked:flex">
+    <nav *ngIf="toggleMenu" class="bg-primary flex-col justify-center pb-4 md:bg-light-green p-3.5 rounded" @easeInOut>
         <ul class="w-36">
             <li class="flex font-medium text-base p-2 rounded mb-2 hover:bg-background cursor-pointer">
                 <img src="assets/icon/favorite.svg" class="mr-2 w-5 h-5" />
@@ -28,3 +24,4 @@
         </ul>
     </nav>   
 </menu>
+
