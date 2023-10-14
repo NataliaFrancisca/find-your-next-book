@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FetchService } from 'src/app/service/fetch.service';
-import { BookResponse } from 'src/types/types';
+import { IResponseAPI } from 'src/types/types';
 
 @Component({
   selector: 'app-form',
@@ -8,23 +8,24 @@ import { BookResponse } from 'src/types/types';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-  @Output() updateData: EventEmitter<BookResponse> = new EventEmitter;
-  @Input() bookSearch!: string;
+  @Output() updateData: EventEmitter<IResponseAPI> = new EventEmitter;
+  @Input() input_book_search!: string;
 
-  showErrorMessage: boolean = false;
+  toggle_error_message = false;
 
   constructor(private fetchService: FetchService) { }
 
   ngOnInit(): void {
   }
 
-  async searchBook(){
-    if(this.bookSearch == undefined || this.bookSearch == ""){
-      this.showErrorMessage = true;
-    }else{
-      this.showErrorMessage = false;
-      const result = await this.fetchService.fetchBook(this.bookSearch);
-      this.updateData.emit(result);
+  async search(){
+    if(this.input_book_search == undefined || this.input_book_search == ""){
+      this.toggle_error_message = true;
+      return;
     }
+    
+    this.toggle_error_message = false;
+    const result = await this.fetchService.fetchBook(this.input_book_search);
+    this.updateData.emit(result);
   }
 }
