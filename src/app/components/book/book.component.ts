@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CrudService } from 'src/app/service/crud.service';
-import { BookResponse, BookVolumeInfo } from 'src/types/types';
+import { IResponseAPI, BookVolumeInfo } from 'src/types/types';
 
 @Component({
   selector: 'app-book',
@@ -8,7 +8,7 @@ import { BookResponse, BookVolumeInfo } from 'src/types/types';
   styleUrls: ['./book.component.css']
 })
 export class BookComponent implements OnInit{
-  @Input() bookResponse!: BookResponse;
+  @Input() bookResponse!: IResponseAPI;
 
   volumeBookData!: BookVolumeInfo;
   
@@ -48,7 +48,7 @@ export class BookComponent implements OnInit{
 
   isFavoriteBook(){
     const listBooks = this.crudService.getBooks();
-    const isFavorite = listBooks.some((listBooks: BookResponse) => listBooks.id === this.bookResponse.id)
+    const isFavorite = listBooks.some((listBooks: IResponseAPI) => listBooks.id === this.bookResponse.id)
     this.favoriteBook = isFavorite;
   }
 }

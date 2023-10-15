@@ -1,17 +1,19 @@
-<main class="w-full p-4">
+<!-- <main class="p-4 bg-red-800">
     <app-logo class="flex flex-col justify-center items-center"></app-logo>
 
-    <div class="bg-white rounded-sm flex mt-5 w-full border-solid border-3 border-base-black">
-        <input 
-            type="text" 
-            class="text-lg w-11/12 px-7 py-4 mr-2 placeholder-slate-400 focus:outline-none text-ellipsis" 
-            placeholder="Type the book that you are looking for" 
-        />
+    <app-form (updateData)="onUpdateData($event)" class="flex flex-col"></app-form>
 
-        <button class="flex justify-center items-center px-6 py-4 bg-primary">
-            <img src="assets/icon/search.svg" />
-        </button>
-    </div>
+    <app-float-menu></app-float-menu> 
+</main> -->
 
-    <app-float-menu></app-float-menu>
+<main class="p-4 flex flex-col min-h-screen h-auto items-center justify-center">
+    <section class="">
+        <app-logo class="flex flex-col justify-center items-center"></app-logo>
+        <app-form (updateData)="onUpdateData($event)" class="flex flex-col"></app-form>
+    </section>
+
+    <app-float-menu></app-float-menu> 
+    <app-view-books *ngIf="book_search_result.length > 0" [bookResult]="book_search_result" class="w-12/12 grid gap-4 grid-cols-1 my-8"></app-view-books>
+
 </main>
+

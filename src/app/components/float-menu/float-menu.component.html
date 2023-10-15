@@ -6,20 +6,19 @@
 
     <nav *ngIf="toggleMenu" class="bg-primary flex-col justify-center pb-4 md:bg-light-green p-3.5 rounded" @easeInOut>
         <ul class="w-36">
-            <li class="flex font-medium text-base p-2 rounded mb-2 hover:bg-background cursor-pointer">
+            <li class="flex font-medium text-base p-2 rounded mb-2 hover:bg-background cursor-pointer" routerLinkActive="bg-background">
                 <img src="assets/icon/favorite.svg" class="mr-2 w-5 h-5" />
-                <a [routerLink]="['/favorites']" routerLinkActive="router-link-active">Favorite</a>
+                <a [routerLink]="['/favorites']" >Favorite</a>
             </li>
     
-            <li class="flex font-medium text-base p-2 rounded mb-2 hover:bg-background cursor-pointer">
+            <li class="flex font-medium text-base p-2 rounded mb-2 visited:bg-background hover:bg-background cursor-pointer " routerLinkActive="bg-background">
                 <img src="assets/icon/saved.svg" class="mr-2 w-5 h-5" />
-                <a [routerLink]="['/saved']" routerLinkActive="router-link-active">Saved</a>
+                <a [routerLink]="['/saved']" >Saved</a>
             </li>
     
-            <li class="flex font-medium text-base p-2 rounded hover:bg-background cursor-pointer">
+            <li class="flex font-medium text-base p-2 rounded hover:bg-background cursor-pointer" routerLinkActive="bg-background" >
                 <img src="assets/icon/finished.svg" class="mr-2 w-5 h-5" />
-                <a [routerLink]="['/finished']" routerLinkActive="router-link-active">Finished</a>
-                
+                <a [routerLink]="['/finished']" >Finished</a> 
             </li>
         </ul>
     </nav>   

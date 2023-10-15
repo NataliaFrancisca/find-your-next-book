@@ -1,6 +1,6 @@
-<h2 *ngIf="bookResponseData.length > 0" class="font-semibold text-2xl">{{titleView}}</h2>
+<h2 *ngIf="bookResult.length > 0" class="font-semibold text-2xl">Results.:</h2>
 
 <app-book 
-    *ngFor="let book of bookResponseData" [bookResponse]="book"
+    *ngFor="let book of bookResult" [bookResponse]="book"
     class="bg-[#ecddfeff] p-4 rounded flex flex-col justify-between relative lg:flex-row md:flex-row">
 </app-book>
