@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
   book_search_result = [];
+  loader_status = false;
   constructor() { }
 
   ngOnInit(): void {
@@ -14,6 +15,10 @@ export class HomePageComponent implements OnInit {
 
   onUpdateData(data: any){
     this.book_search_result = data;
+  }
+
+  onUpdateLoaderStatus(status: boolean){
+    this.loader_status = status;
   }
 
 }
