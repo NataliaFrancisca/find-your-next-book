@@ -15,6 +15,10 @@
         font-family: 'Inconsolata', monospace;
     }
 
+    button{
+        -webkit-tap-highlight-color: transparent;
+    }
+
 }
 
 *{
