@@ -14,6 +14,7 @@ import { SavedBooksPageComponent } from './pages/saved-books-page/saved-books-pa
 import { FinishedBooksPageComponent } from './pages/finished-books-page/finished-books-page.component';
 import { FavoritesBooksPageComponent } from './pages/favorites-books-page/favorites-books-page.component';
 import { FloatHomeComponent } from './components/float-home/float-home.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FloatHomeComponent } from './components/float-home/float-home.component
     SavedBooksPageComponent,
     FinishedBooksPageComponent,
     FavoritesBooksPageComponent,
-    FloatHomeComponent
+    FloatHomeComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
