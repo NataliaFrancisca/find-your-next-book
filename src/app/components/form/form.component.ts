@@ -20,11 +20,12 @@ export class FormComponent implements OnInit {
   }
 
   async search(){
-    this.updateLoader.emit(true);
     if(this.input_book_search == undefined || this.input_book_search == ""){
       this.toggle_error_message = true;
       return;
     }
+
+    this.updateLoader.emit(true);
     this.toggle_error_message = false;
     const result = await this.fetchService.fetchBook(this.input_book_search);
     this.updateLoader.emit(false);
