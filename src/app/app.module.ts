@@ -15,6 +15,9 @@ import { FinishedBooksPageComponent } from './pages/finished-books-page/finished
 import { FavoritesBooksPageComponent } from './pages/favorites-books-page/favorites-books-page.component';
 import { FloatHomeComponent } from './components/float-home/float-home.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { IconButtonComponent } from './components/icon-button/icon-button.component';
+import { CategoriesComponent } from './components/categories/categories.component';
+import { DescriptionComponent } from './components/description/description.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { LoaderComponent } from './components/loader/loader.component';
     FinishedBooksPageComponent,
     FavoritesBooksPageComponent,
     FloatHomeComponent,
-    LoaderComponent
+    LoaderComponent,
+    IconButtonComponent,
+    CategoriesComponent,
+    DescriptionComponent
   ],
   imports: [
     BrowserModule,
