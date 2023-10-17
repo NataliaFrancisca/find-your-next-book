@@ -1,4 +1,4 @@
-<menu class="top-12 right-4 absolute bg-primary z-10 flex flex-col justify-end items-end shadow-default md:right-10" >
+<menu class="top-8 right-4 absolute bg-primary z-10 flex flex-col justify-end items-end shadow-default md:right-10" >
     <button (click)="onToggleMenu()" class="cursor-pointer flex justify-end p-2 w-fit" [@openClose]="toggleMenu ? 'open' : 'close'"> 
         <img *ngIf="toggleMenu == false" src="assets/icon/menu.svg" class="p-2" />
         <img *ngIf="toggleMenu" src="assets/icon/close.svg" class="p-2" />
