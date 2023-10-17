@@ -2,9 +2,10 @@
     <input 
         name="input_book_search"
         type="text" 
-        class="w-full text-lg px-7 py-4 mr-2 placeholder-slate-400 focus:outline-none text-ellipsis" 
+        class="w-full text-lg px-7 py-4 placeholder-slate-400 text-ellipsis focus:outline-none" 
         placeholder="Type the book that you are looking for" 
         [(ngModel)]="input_book_search"
+        (keyup.enter)="search()"
     />
 
     <button class="flex justify-center items-center px-6 py-4 bg-primary" (click)="search()">
