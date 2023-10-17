@@ -1,6 +1,6 @@
-<h2 *ngIf="bookResult.length > 0" class="font-semibold text-2xl">Results.:</h2>
+<h2 *ngIf="bookResult.length > 0" class="font-semibold text-3xl">Results.:</h2>
 
 <app-book 
     *ngFor="let book of bookResult" [bookResponse]="book"
-    class="bg-[#ecddfeff] p-4 rounded flex flex-col justify-between relative lg:flex-row md:flex-row">
+    class="px-5 py-8 items-center bg-white rounded-3 border-solid border-[#202020] border-3 flex flex-col justify-between lg:flex-row md:flex-row md:py-14 md:px-10 md:items-start">
 </app-book>
