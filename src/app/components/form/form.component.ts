@@ -9,6 +9,7 @@ import { IResponseAPI } from 'src/types/types';
 })
 export class FormComponent implements OnInit {
   @Output() updateData: EventEmitter<IResponseAPI> = new EventEmitter;
+  @Output() updateLoader: EventEmitter<boolean> = new EventEmitter;
   @Input() input_book_search!: string;
 
   toggle_error_message = false;
@@ -23,9 +24,11 @@ export class FormComponent implements OnInit {
       this.toggle_error_message = true;
       return;
     }
-    
+
+    this.updateLoader.emit(true);
     this.toggle_error_message = false;
     const result = await this.fetchService.fetchBook(this.input_book_search);
+    this.updateLoader.emit(false);
     this.updateData.emit(result);
   }
 }
