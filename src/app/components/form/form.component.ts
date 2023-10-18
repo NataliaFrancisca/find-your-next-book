@@ -19,16 +19,31 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onScroll() {
+    // was not working whwn I click for the first time; had to add a timeout to do this scroll
+    setTimeout(() => {
+      window.scrollBy({
+        top: 600, 
+        behavior: 'smooth' 
+      });
+    }, 100);
+  }
+
   async search(){
     if(this.input_book_search == undefined || this.input_book_search == ""){
       this.toggle_error_message = true;
       return;
     }
 
-    this.updateLoader.emit(true);
     this.toggle_error_message = false;
+    await this.fetch();
+    this.onScroll();
+  }
+
+  async fetch(){
+    this.updateLoader.emit(true);
     const result = await this.fetchService.fetchBook(this.input_book_search);
-    this.updateLoader.emit(false);
     this.updateData.emit(result);
+    this.updateLoader.emit(false);
   }
 }
