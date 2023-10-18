@@ -8,7 +8,7 @@ module.exports = {
       colors: {
         'base-black': '#202020',
         'primary': '#64A100',
-        'background': '#E1EDFF'
+        'background': '#f0ffff'
       },
       boxShadow: {
         'default': '0px 4px 4px rgba(0, 0, 0, 0.25)'
