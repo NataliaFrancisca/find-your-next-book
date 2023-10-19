@@ -8,6 +8,7 @@ import { IResponseAPI } from 'src/types/types';
 })
 export class ViewBooksComponent implements OnInit {
   @Input() bookResult: Array<IResponseAPI> = [];
+  @Input() viewName!: String;
   
   constructor() { }
 
