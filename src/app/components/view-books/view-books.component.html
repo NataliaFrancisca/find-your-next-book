@@ -1,4 +1,5 @@
-<h2 *ngIf="bookResult.length > 0" class="font-semibold text-3xl">Results.:</h2>
+<h2 class="font-semibold text-3xl">{{viewName}}</h2>
+<h3 class="font-semibold text-3xl" *ngIf="bookResult.length == 0">No results</h3>
 
 <app-book 
     *ngFor="let book of bookResult" [bookResponse]="book"
