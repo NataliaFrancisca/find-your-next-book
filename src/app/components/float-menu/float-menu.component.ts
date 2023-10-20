@@ -18,47 +18,53 @@ import { Router } from '@angular/router';
     trigger('openMenu', [
       transition(':enter, :leave', [
         query('@*', animateChild()),
-        animate('200ms ease-in-out'),
+        animate('200ms ease-in-out')
       ])
     ]),
 
     trigger('easeInOut', [
       transition('void => *', [
-          style({
-              opacity: 0
-          }),
-          animate("500ms ease", style({
-              opacity: 1
-          }))
-      ]),
-      transition('* => void', [
+        style({
+          opacity: 0
+        }),
+        animate(
+          '500ms ease',
           style({
             opacity: 1
-          }),
-          animate("400ms ease-out", style({
+          })
+        )
+      ]),
+      transition('* => void', [
+        style({
+          opacity: 1
+        }),
+        animate(
+          '400ms ease-out',
+          style({
             opacity: 0
-          }))
-        ])
-      ]),
+          })
+        )
+      ])
+    ]),
 
-      trigger('openClose', [
-        state('open', style({ transform: 'rotate(0deg)' })),
-        state('close', style({ transform: 'rotate(180deg)' })),
-        transition('open <=> close', animate('300ms ease-out')),
-      ]),
+    trigger('openClose', [
+      state('open', style({ transform: 'rotate(0deg)' })),
+      state('close', style({ transform: 'rotate(180deg)' })),
+      transition('open <=> close', animate('300ms ease-out'))
+    ])
   ]
 })
 export class FloatMenuComponent implements OnInit {
   toggleMenu = false;
-  isBaseURL!:boolean;
+  isBaseURL!: boolean;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
-    this.isBaseURL = this.router.url === "/";
+    this.isBaseURL = this.router.url === '/';
   }
 
-  onToggleMenu(){
+  onToggleMenu() {
     this.toggleMenu = !this.toggleMenu;
   }
 }

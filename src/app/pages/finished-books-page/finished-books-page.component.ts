@@ -10,22 +10,21 @@ import { IResponseAPI } from 'src/types/types';
 export class FinishedBooksPageComponent implements OnInit {
   bookResult!: Array<IResponseAPI>;
   loader_status = false;
-  
-  constructor(private crudService: CrudService) { }
+
+  constructor(private crudService: CrudService) {}
 
   ngOnInit(): void {
     this.onFetchData();
   }
 
-  onUpdateLoaderStatus(status: boolean){
+  onUpdateLoaderStatus(status: boolean) {
     this.loader_status = status;
   }
 
-  onFetchData(){
+  onFetchData() {
     this.loader_status = true;
     const result = this.crudService.getBooks('finished');
     this.bookResult = result;
     this.loader_status = false;
   }
-
 }

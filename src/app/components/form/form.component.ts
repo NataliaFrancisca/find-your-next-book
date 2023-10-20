@@ -8,29 +8,28 @@ import { IResponseAPI } from 'src/types/types';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-  @Output() updateData: EventEmitter<Array<IResponseAPI>> = new EventEmitter;
-  @Output() updateLoader: EventEmitter<boolean> = new EventEmitter;
+  @Output() updateData: EventEmitter<Array<IResponseAPI>> = new EventEmitter();
+  @Output() updateLoader: EventEmitter<boolean> = new EventEmitter();
   @Input() input_book_search!: string;
 
   toggle_error_message = false;
 
-  constructor(private fetchService: FetchService) { }
+  constructor(private fetchService: FetchService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onScroll() {
     // was not working whwn I click for the first time; had to add a timeout to do this scroll
     setTimeout(() => {
       window.scrollBy({
-        top: 600, 
-        behavior: 'smooth' 
+        top: 600,
+        behavior: 'smooth'
       });
     }, 100);
   }
 
-  async search(){
-    if(this.input_book_search == undefined || this.input_book_search == ""){
+  async search() {
+    if (this.input_book_search == undefined || this.input_book_search == '') {
       this.toggle_error_message = true;
       return;
     }
@@ -40,7 +39,7 @@ export class FormComponent implements OnInit {
     this.onScroll();
   }
 
-  async fetch(){
+  async fetch() {
     this.updateLoader.emit(true);
     const result = await this.fetchService.fetchBook(this.input_book_search);
     this.updateData.emit(result);

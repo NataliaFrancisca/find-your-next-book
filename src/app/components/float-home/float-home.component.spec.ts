@@ -8,9 +8,8 @@ describe('FloatHomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FloatHomeComponent ]
-    })
-    .compileComponents();
+      declarations: [FloatHomeComponent]
+    }).compileComponents();
 
     fixture = TestBed.createComponent(FloatHomeComponent);
     component = fixture.componentInstance;

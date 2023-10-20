@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CrudService } from 'src/app/service/crud.service';
 import { IResponseAPI } from 'src/types/types';
 
@@ -11,17 +11,17 @@ export class FavoritesBooksPageComponent implements OnInit {
   bookResult!: Array<IResponseAPI>;
   loader_status = false;
 
-  constructor(private crudService: CrudService) { }
+  constructor(private crudService: CrudService) {}
 
   ngOnInit(): void {
     this.onFetchData();
   }
 
-  onUpdateLoaderStatus(status: boolean){
+  onUpdateLoaderStatus(status: boolean) {
     this.loader_status = status;
   }
 
-  onFetchData(){
+  onFetchData() {
     this.loader_status = true;
     const result = this.crudService.getBooks('favorite');
     this.bookResult = result;

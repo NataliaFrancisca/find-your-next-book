@@ -1,9 +1,21 @@
-<p class="text-lg" *ngIf="!toggleReadMore else longDescription">{{ shortDescription }} 
-    <span *ngIf="bookDescription" (click)="buttonToogleReadMore()" class="cursor-pointer text-primary font-semibold">...Read More</span>
+<p class="text-lg" *ngIf="!toggleReadMore; else longDescription">
+  {{ shortDescription }}
+  <span
+    *ngIf="bookDescription"
+    (click)="buttonToogleReadMore()"
+    class="cursor-pointer text-primary font-semibold"
+    >...Read More</span
+  >
 </p>
 
 <ng-template #longDescription>
-    <p class="text-lg">{{bookDescription}}
-        <span *ngIf="bookDescription" (click)="buttonToogleReadMore()" class="cursor-pointer text-primary font-semibold">...Read Less</span>
-    </p>
+  <p class="text-lg">
+    {{ bookDescription }}
+    <span
+      *ngIf="bookDescription"
+      (click)="buttonToogleReadMore()"
+      class="cursor-pointer text-primary font-semibold"
+      >...Read Less</span
+    >
+  </p>
 </ng-template>

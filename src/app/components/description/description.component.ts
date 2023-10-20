@@ -11,14 +11,16 @@ export class DescriptionComponent implements OnInit {
   toggleReadMore = false;
   shortDescription = '';
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
-    this.shortDescription = this.bookDescription?.split(" ").slice(0, 20).join(" ");
+    this.shortDescription = this.bookDescription
+      ?.split(' ')
+      .slice(0, 20)
+      .join(' ');
   }
 
-  buttonToogleReadMore(){
+  buttonToogleReadMore() {
     this.toggleReadMore = !this.toggleReadMore;
   }
-
 }

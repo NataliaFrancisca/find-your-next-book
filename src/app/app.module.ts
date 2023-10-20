@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
+import {
+  BrowserAnimationsModule,
+  provideAnimations
+} from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormComponent } from './components/form/form.component';
@@ -43,9 +46,7 @@ import { DescriptionComponent } from './components/description/description.compo
     FormsModule,
     BrowserAnimationsModule
   ],
-  providers: [
-    provideAnimations()
-  ],
-  bootstrap: [AppComponent],
+  providers: [provideAnimations()],
+  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

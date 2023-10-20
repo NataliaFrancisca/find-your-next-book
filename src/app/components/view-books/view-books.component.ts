@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IResponseAPI } from 'src/types/types';
 
 @Component({
@@ -9,15 +9,13 @@ import { IResponseAPI } from 'src/types/types';
 export class ViewBooksComponent implements OnInit {
   @Input() bookResult: Array<IResponseAPI> = [];
   @Input() viewName!: string;
-  @Output() updateView: EventEmitter<boolean> = new EventEmitter;
+  @Output() updateView: EventEmitter<boolean> = new EventEmitter();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  onUpdateCurrentView(){
+  onUpdateCurrentView() {
     this.updateView.emit();
   }
-
 }
