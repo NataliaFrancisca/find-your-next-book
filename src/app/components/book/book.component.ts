@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CrudService } from 'src/app/service/crud.service';
 import { IResponseAPI, BookVolumeInfo } from 'src/types/types';
 
@@ -8,23 +8,23 @@ import { IResponseAPI, BookVolumeInfo } from 'src/types/types';
   templateUrl: './book.component.html',
   styleUrls: ['./book.component.css']
 })
-export class BookComponent implements OnInit{
+export class BookComponent implements OnInit{  
+  @Output() updateCurrentView : EventEmitter<boolean> = new EventEmitter;
   @Input() bookResponse!: IResponseAPI;
+
   volumeBookData!: BookVolumeInfo;
 
   btns_status = {
     favorite: false,
-    save: false,
+    saved: false,
     finished: false
   }
-
-  favoriteBook = false;
 
   constructor(private crudService: CrudService) {}
 
   ngOnInit(): void {
     this.volumeBookData = this.bookResponse.volumeInfo;
-    this.isFavoriteBook();
+    this.applyFilter();
   }
 
   toggleFavoriteBook(){
@@ -38,7 +38,7 @@ export class BookComponent implements OnInit{
   }
 
   toggleSavedBook(){
-    this.btns_status.save = !this.btns_status.save;
+    this.btns_status.saved = !this.btns_status.saved;
     this.updateSavedBooks();
   }
 
@@ -47,23 +47,34 @@ export class BookComponent implements OnInit{
     this.btns_status.favorite ? 
     this.crudService.setFavorite({id: this.bookResponse.id, volumeInfo: this.bookResponse.volumeInfo}) :
     this.crudService.deleteBook(this.bookResponse.id, 'favorite')
+    this.updateCurrentView.emit();
   }
 
   updateFinishedBooks(){
     this.btns_status.finished ?
     this.crudService.setFinished({id: this.bookResponse.id, volumeInfo: this.bookResponse.volumeInfo}) :
     this.crudService.deleteBook(this.bookResponse.id, 'finished')
+    this.updateCurrentView.emit();
   }
 
   updateSavedBooks(){
     this.btns_status ?
     this.crudService.setSaved({id: this.bookResponse.id, volumeInfo: this.bookResponse.volumeInfo}) :
     this.crudService.deleteBook(this.bookResponse.id, 'saved')
+    this.updateCurrentView.emit();
   }
 
-  isFavoriteBook(){
-    const listBooks = this.crudService.getBooks('favorite');
-    const isFavorite = listBooks.some((listBooks: IResponseAPI) => listBooks.id === this.bookResponse.id)
+  applyFilter(){
+    const favorites = this.crudService.getBooks('favorite');
+    const saved = this.crudService.getBooks('saved');
+    const finished = this.crudService.getBooks('finished');
+
+    const isFavorite = favorites.some((listBooks: IResponseAPI) => listBooks.id === this.bookResponse.id);
+    const isSaved = saved.some((listBooks: IResponseAPI) => listBooks.id === this.bookResponse.id);
+    const isFinished = finished.some((listBooks: IResponseAPI) => listBooks.id === this.bookResponse.id);
+
     this.btns_status.favorite = isFavorite;
+    this.btns_status.saved = isSaved;
+    this.btns_status.finished = isFinished;
   }
 }
