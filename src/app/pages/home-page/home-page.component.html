@@ -7,5 +7,5 @@
 
     <app-float-menu></app-float-menu> 
 
-    <app-view-books *ngIf="book_search_result.length > 0" [bookResult]="book_search_result" class="w-full md:w-11/12 grid gap-4 grid-cols-1 my-8"></app-view-books>
+    <app-view-books *ngIf="book_search_result.length > 0" [bookResult]="book_search_result" [viewName]="'results'" class="w-full md:w-11/12 grid gap-4 grid-cols-1 my-8"></app-view-books>
 </main>

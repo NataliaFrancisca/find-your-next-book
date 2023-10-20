@@ -6,19 +6,24 @@
 
     <nav *ngIf="toggleMenu" class="flex-col justify-center pb-4 p-3.5" @easeInOut>
         <ul class="w-36">
-            <li class="flex font-bold text-md p-2 rounded mb-2 hover:bg-[rgba(255,255,255,.2)] cursor-pointer " routerLinkActive="bg-background">
+            <li *ngIf="!isBaseURL" class="flex font-bold text-md p-2 rounded mb-2 hover:bg-[rgba(255,255,255,.2)] cursor-pointer">
+                <img src="assets/icon/home.svg" class="mr-2 w-5 h-5" />
+                <a [routerLink]="['/']">Home</a>
+            </li>
+
+            <li class="flex font-bold text-md p-2 rounded mb-2 hover:bg-[rgba(255,255,255,.2)] cursor-pointer " routerLinkActive="bg-primary">
                 <img src="assets/icon/favorite.svg" class="mr-2 w-5 h-5" />
-                <a [routerLink]="['/favorites']">Favorite</a>
+                <a [routerLink]="['/favorites']" class="w-full">Favorite</a>
             </li>
     
-            <li class="flex font-bold text-md p-2 rounded mb-2 visited:bg-background hover:bg-[rgba(255,255,255,.2)] cursor-pointer " routerLinkActive="bg-background">
+            <li class="flex font-bold text-md p-2 rounded mb-2 visited:bg-background hover:bg-[rgba(255,255,255,.2)] cursor-pointer " routerLinkActive="bg-primary">
                 <img src="assets/icon/saved.svg" class="mr-2 w-5 h-5" />
-                <a [routerLink]="['/saved']">Saved</a>
+                <a [routerLink]="['/saved']" class="w-full">Saved</a>
             </li>
     
-            <li class="flex font-bold text-md p-2 rounded hover:bg-[rgba(255,255,255,.2)] cursor-pointer" routerLinkActive="bg-background" >
+            <li class="flex font-bold text-md p-2 rounded hover:bg-[rgba(255,255,255,.2)] cursor-pointer" routerLinkActive="bg-primary" >
                 <img src="assets/icon/finished.svg" class="mr-2 w-5 h-5" />
-                <a [routerLink]="['/finished']">Finished</a> 
+                <a [routerLink]="['/finished']" class="w-full">Finished</a> 
             </li>
         </ul>
     </nav>   

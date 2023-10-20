@@ -19,15 +19,15 @@ export class IconButtonComponent implements OnInit {
 
   src_icon: TObjectKey = {
     favorite: {
-      default: 'favorite.svg',
+      default: 'favorite-black.svg',
       checked: 'favorite-checked.svg',
     },
     saved: {
-      default: 'saved.svg',
+      default: 'saved-black.svg',
       checked: 'saved-checked.svg',
     },
     finished: {
-      default: 'finished.svg',
+      default: 'finished-black.svg',
       checked: 'finished-checked.svg',
     }
   }
