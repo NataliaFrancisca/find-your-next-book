@@ -4,31 +4,44 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-    html{
-        font-family: 'Inconsolata', monospace;
-    }
+@layer base {
+  html {
+    font-family: 'Inconsolata', monospace;
+  }
 
-    h1, h2, h3, h4, h5, h6, a, p, span, label, button, ul, li, input{
-        font-family: 'Inconsolata', monospace;
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  a,
+  p,
+  span,
+  label,
+  button,
+  ul,
+  li,
+  input {
+    font-family: 'Inconsolata', monospace;
+  }
 
-    button{
-        -webkit-tap-highlight-color: transparent;
-    }
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
 
-    /* WHEN I USE THE AUTOFILL THE COLOR WAS DIFFENT, THIS FIX */
-    input:-webkit-autofill,
-    input:-webkit-autofill:hover, 
-    input:-webkit-autofill:focus{
-        -webkit-text-fill-color: #202020;
-        -webkit-box-shadow: 0 0 0px 1000px white inset;
-    }
+  /* WHEN I USE THE AUTOFILL THE COLOR WAS DIFFENT, THIS FIX */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #202020;
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+  }
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    border: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
 }

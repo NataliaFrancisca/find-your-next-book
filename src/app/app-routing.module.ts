@@ -6,14 +6,14 @@ import { FinishedBooksPageComponent } from './pages/finished-books-page/finished
 import { FavoritesBooksPageComponent } from './pages/favorites-books-page/favorites-books-page.component';
 
 const routes: Routes = [
-  { path: '', component: HomePageComponent},
+  { path: '', component: HomePageComponent },
   { path: 'saved', component: SavedBooksPageComponent },
   { path: 'finished', component: FinishedBooksPageComponent },
-  { path: 'favorites', component: FavoritesBooksPageComponent},
+  { path: 'favorites', component: FavoritesBooksPageComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

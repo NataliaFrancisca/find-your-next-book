@@ -9,17 +9,15 @@ import { IResponseAPI } from 'src/types/types';
 export class HomePageComponent implements OnInit {
   book_search_result: Array<IResponseAPI> = [];
   loader_status = false;
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  onUpdateData(data: Array<IResponseAPI>){
+  onUpdateData(data: Array<IResponseAPI>) {
     this.book_search_result = data;
   }
 
-  onUpdateLoaderStatus(status: boolean){
+  onUpdateLoaderStatus(status: boolean) {
     this.loader_status = status;
   }
-
 }

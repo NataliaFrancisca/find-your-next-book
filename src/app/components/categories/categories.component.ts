@@ -5,9 +5,9 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './categories.component.html',
   styleUrls: ['./categories.component.css'],
   styles: [
-    ` 
-      .not-last:after{
-        content: " - ";
+    `
+      .not-last:after {
+        content: ' - ';
         padding: 0 10px;
       }
     `
@@ -16,10 +16,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CategoriesComponent implements OnInit {
   @Input() categories!: Array<string>;
 
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
