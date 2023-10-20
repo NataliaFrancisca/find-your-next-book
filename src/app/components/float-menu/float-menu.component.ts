@@ -8,6 +8,7 @@ import {
   query,
   animateChild
 } from '@angular/animations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-float-menu',
@@ -49,9 +50,12 @@ import {
 })
 export class FloatMenuComponent implements OnInit {
   toggleMenu = false;
-  constructor() { }
+  isBaseURL!:boolean;
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    this.isBaseURL = this.router.url === "/";
   }
 
   onToggleMenu(){
