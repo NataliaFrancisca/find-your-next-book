@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IResponseAPI } from 'src/types/types';
 
 @Component({
   selector: 'app-home-page',
@@ -6,14 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-  book_search_result = [];
+  book_search_result: Array<IResponseAPI> = [];
   loader_status = false;
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onUpdateData(data: any){
+  onUpdateData(data: Array<IResponseAPI>){
     this.book_search_result = data;
   }
 

@@ -8,7 +8,7 @@ import { IResponseAPI } from 'src/types/types';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-  @Output() updateData: EventEmitter<IResponseAPI> = new EventEmitter;
+  @Output() updateData: EventEmitter<Array<IResponseAPI>> = new EventEmitter;
   @Output() updateLoader: EventEmitter<boolean> = new EventEmitter;
   @Input() input_book_search!: string;
 
