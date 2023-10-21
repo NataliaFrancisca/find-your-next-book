@@ -1,41 +1,30 @@
-# 📚Find your next book
+# **Find Your Next Book**
 
-Esse projeto foi construído para praticar os conhecimentos em Angular.
-
+Esse projeto foi construído para praticar os meus conhecimentos em Angular.js & TailwindCSS
 ⭐ O projeto foi baseado no [Book Finder](https://github.com/wasimreja/book-finder) do [Wasim Reja](https://github.com/wasimreja).
 
-## Stack utilizada
-
+## **Stack**:
 - Angular,
-- TailwindCSS
-- Google Books API's
+- TailwindCSS,
+- Google Books API,
+- Prettier,
+- ESlint
 
-## Funcionalidades
+## **Assets**:
+- Icons: [Material Symbols](https://fonts.google.com/icons)
+- Ilustração: [PWD Girl with Eye Patch Reading Illustration - Canva](https://www.canva.com/)
+- Figma: [Figma File](https://www.figma.com/file/77P7X0J9Domo8LudU69fXE/FIND-YOUR-NEXT-BOOK?type=design&node-id=86%3A97&mode=design&t=WBqOl7HauNJ2Gq4X-1)
 
-- Pesquisar por livros e autores
-- Salvar livros
+## **Funcionalidades**:
+    1. Pesquisar Livros
+    2. Aplicar Filtro sobre o Livro (Favoritar, Salvar e Finalizado)
+    3. Remover os Filtros
 
-## Aprendizados
-
-- Como trabalhar com APIs no Angular,
+## **Aprendizados**:
+- Como trabalhar com API no Angular,
 - Criar services,
 - Compartilhar dados entre componentes,
 - Utilização do Tailwind.
 
-## Melhorias
-
-- Preciso melhorar a utilização da tipagem do TS, principalmente no retorno do resultado da API.
-- Melhorar a padronização do código
-
-## Screenshots
-
-![App Screenshot](https://firebasestorage.googleapis.com/v0/b/github-images-6c299.appspot.com/o/find-your-next-book.png?alt=media&token=397bdaa7-f46a-4f6e-be92-6d63ab01ba17)
-
-## Referência
-
-- [Icons](https://fonts.google.com/icons)
-- [Imagem](https://designstripe.com/)
-
-## Demonstração
-
-🔗[Find your next book](https://find-your-next-book.vercel.app/)
+## **Screenshot**:
+![App Screenshot](https://raw.githubusercontent.com/NataliaFrancisca/github-readme-images/main/FIND%20YOUR%20NEXT%20BOOK.png)
