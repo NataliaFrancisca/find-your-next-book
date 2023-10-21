@@ -18,6 +18,10 @@ Esse projeto foi construído para praticar os meus conhecimentos em Angular.js &
     1. Pesquisar Livros
     2. Aplicar Filtro sobre o Livro (Favoritar, Salvar e Finalizado)
     3. Remover os Filtros
+    4. Salvar os livros no LocalStorage
+
+> 🚨Se você limpar os dados do seu navegador, as informações salvas no LocalStorage serão perdidas.
+
 ## **Aprendizados**:
 - Como trabalhar com API no Angular,
 - Criar services,
