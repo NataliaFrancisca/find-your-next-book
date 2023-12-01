@@ -63,7 +63,7 @@ export class BookComponent implements OnInit {
   }
 
   updateSavedBooks() {
-    this.btns_status
+    this.btns_status.saved
       ? this.crudService.setSaved({
           id: this.bookResponse.id,
           volumeInfo: this.bookResponse.volumeInfo
